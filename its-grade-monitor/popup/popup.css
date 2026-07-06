@@ -1,0 +1,290 @@
+/* ITS Grade Monitor - Neo-Brutalist Popup Stylesheet */
+
+:root {
+  --bg-primary: #121214;
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
+  
+  /* Stark Brutalist Palette */
+  --brutal-black: #000000;
+  --brutal-white: #ffffff;
+  
+  /* Flat Neon Accents */
+  --color-green: #39ff14;       /* Neon Lime */
+  --color-pink: #ff007f;        /* Neon Pink */
+  --color-indigo: #818cf8;      /* Neon Indigo */
+  --color-yellow: #facc15;      /* Flat Yellow */
+  --color-gray: #27272a;        /* Flat Slate */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  width: 340px;
+  min-height: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  overflow: hidden;
+}
+
+.card {
+  width: 100%;
+  background: #1e1e24;
+  border: 3px solid var(--brutal-white);
+  box-shadow: 6px 6px 0px var(--brutal-black);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid var(--brutal-white);
+  padding-bottom: 14px;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-emoji {
+  font-size: 26px;
+}
+
+.logo-text h1 {
+  font-size: 17px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--brutal-white);
+}
+
+.version {
+  font-size: 11px;
+  color: var(--color-yellow);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 1px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Settings Icon Button - Brutalist style */
+.btn-settings-icon {
+  background: var(--color-yellow);
+  color: var(--brutal-black);
+  border: 2px solid var(--brutal-black);
+  border-radius: 0;
+  padding: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 2px 0px var(--brutal-black);
+  transition: all 0.15s ease;
+}
+
+.btn-settings-icon:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px var(--brutal-black);
+}
+
+.btn-settings-icon:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px var(--brutal-black);
+}
+
+.btn-settings-icon svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+/* Status Badge - Flat Brutalist */
+.status-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border: 2px solid var(--brutal-black);
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 2px 2px 0px var(--brutal-black);
+}
+
+.status-badge.active {
+  background: var(--color-green);
+  color: var(--brutal-black);
+}
+
+.status-badge.stopped {
+  background: var(--color-pink);
+  color: var(--brutal-white);
+}
+
+/* Status Dot (No animations for static raw feel, or flat pulse) */
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background: currentColor;
+  border: 1px solid var(--brutal-black);
+  display: inline-block;
+}
+
+/* Dashboard Metrics */
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.metric-card {
+  background: #18181b;
+  border: 2px solid var(--brutal-white);
+  box-shadow: 3px 3px 0px var(--brutal-black);
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  transition: all 0.15s ease;
+}
+
+.metric-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px var(--brutal-black);
+}
+
+.metric-label {
+  font-size: 9px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.metric-value {
+  font-size: 13px;
+  color: var(--brutal-white);
+  font-weight: 600;
+  font-family: monospace;
+}
+
+.dual-metrics {
+  display: flex;
+  gap: 12px;
+}
+
+.metric-card.half {
+  flex: 1;
+}
+
+/* Actions Section */
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.toggle-group,
+.button-grid {
+  display: flex;
+  gap: 12px;
+}
+
+/* Brutalist Buttons */
+.btn {
+  font-family: 'Outfit', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 10px 12px;
+  border: 2px solid var(--brutal-black);
+  border-radius: 0; /* Flat corners */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-shadow: 3px 3px 0px var(--brutal-black);
+  transition: all 0.15s ease;
+  flex: 1;
+  outline: none;
+}
+
+.btn:hover:not(:disabled) {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px var(--brutal-black);
+}
+
+.btn:active:not(:disabled) {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px var(--brutal-black);
+}
+
+.btn:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Button Variants */
+.btn-success {
+  background: var(--color-green);
+  color: var(--brutal-black);
+}
+
+.btn-danger {
+  background: var(--color-pink);
+  color: var(--brutal-white);
+}
+
+.btn-primary {
+  background: var(--color-indigo);
+  color: var(--brutal-black);
+}
+
+.btn-secondary {
+  background: var(--brutal-white);
+  color: var(--brutal-black);
+}
+
+/* Icons */
+.icon {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+/* Spinner Rotate Animation */
+.spinner-icon.spinning {
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

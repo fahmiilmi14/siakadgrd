@@ -1,0 +1,376 @@
+/* ITS Grade Monitor - Neo-Brutalist Options Stylesheet */
+
+:root {
+  --bg-primary: #121214;
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
+  
+  /* Brutalist Palette */
+  --brutal-black: #000000;
+  --brutal-white: #ffffff;
+  
+  /* Accents */
+  --color-green: #39ff14;       /* Neon Lime */
+  --color-pink: #ff007f;        /* Neon Pink */
+  --color-indigo: #818cf8;      /* Neon Indigo */
+  --color-yellow: #facc15;      /* Flat Yellow */
+  --color-gray: #27272a;        /* Flat Slate */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Header */
+.header {
+  border-bottom: 3px solid var(--brutal-white);
+  padding-bottom: 24px;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo-emoji {
+  font-size: 40px;
+}
+
+.logo-text h1 {
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--brutal-white);
+}
+
+.subtitle {
+  font-size: 13px;
+  color: var(--color-yellow);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+}
+
+/* Layout Grid */
+.content-layout {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .content-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.settings-column,
+.sidebar-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Brutalist Cards */
+.settings-card {
+  background: #1e1e24;
+  border: 3px solid var(--brutal-white);
+  box-shadow: 6px 6px 0px var(--brutal-black);
+  display: flex;
+  flex-direction: column;
+}
+
+.highlight-card {
+  border-color: var(--brutal-white);
+  background: #27272a;
+}
+
+.card-header {
+  padding: 20px 24px;
+  border-bottom: 3px solid var(--brutal-white);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.card-icon {
+  width: 20px;
+  height: 20px;
+  fill: var(--color-yellow);
+}
+
+.card-header h2 {
+  font-size: 15px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card-body.gap-12 {
+  gap: 12px;
+}
+
+/* Form Groups & Inputs */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-group label {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  letter-spacing: 0.08em;
+}
+
+input[type="text"],
+input[type="password"],
+select {
+  font-family: monospace; /* Stark raw monospaced font for inputs */
+  width: 100%;
+  background: #121214;
+  border: 2px solid var(--brutal-white);
+  border-radius: 0; /* Flat corners */
+  padding: 12px 16px;
+  color: var(--brutal-white);
+  font-size: 13px;
+  outline: none;
+  transition: all 0.15s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+select:focus {
+  border-color: var(--color-indigo);
+  box-shadow: 4px 4px 0px var(--brutal-black);
+  background: #18181b;
+}
+
+/* Password Eye Button inside input */
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-wrapper input {
+  padding-right: 48px;
+}
+
+.btn-icon {
+  position: absolute;
+  right: 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+}
+
+.btn-icon:hover {
+  color: var(--color-indigo);
+}
+
+.icon-eye {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+/* Custom Brutalist Switch Slider */
+.toggle-group-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.toggle-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.toggle-title {
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.toggle-description {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+  flex-shrink: 0;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-gray);
+  border: 2px solid var(--brutal-white);
+  transition: .15s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 3px;
+  background-color: var(--brutal-white);
+  transition: .15s;
+}
+
+input:checked + .slider {
+  background-color: var(--color-green);
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+  background-color: var(--brutal-black);
+}
+
+/* Buttons */
+.btn {
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 2px solid var(--brutal-black);
+  border-radius: 0; /* Hard corners */
+  padding: 12px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 3px 3px 0px var(--brutal-black);
+  transition: all 0.15s ease;
+  outline: none;
+}
+
+.btn-full {
+  width: 100%;
+}
+
+.btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px var(--brutal-black);
+}
+
+.btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px var(--brutal-black);
+}
+
+/* Button Variants */
+.btn-primary {
+  background: var(--color-indigo);
+  color: var(--brutal-black);
+}
+
+.btn-secondary {
+  background: var(--brutal-white);
+  color: var(--brutal-black);
+}
+
+.btn-danger {
+  background: var(--color-pink);
+  color: var(--brutal-white);
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+/* Hidden input element wrapper */
+.import-wrapper {
+  position: relative;
+}
+
+.import-wrapper input[type="file"] {
+  display: none;
+}
+
+/* Miscellaneous */
+.divider {
+  border: none;
+  border-bottom: 2px dashed var(--brutal-white);
+  margin: 12px 0;
+}
+
+/* Brutalist Save Status Alert Box */
+.save-status {
+  background: var(--color-green);
+  border: 3px solid var(--brutal-black);
+  box-shadow: 4px 4px 0px var(--brutal-black);
+  padding: 12px 16px;
+  color: var(--brutal-black);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  transform: translateY(0);
+}
+
+.save-status.hidden {
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+}

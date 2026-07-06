@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "ITS Grade Monitor",
+  "version": "2.0.0",
+  "description": "Chrome extension to monitor grades on Academic Portal ITS and send Telegram notifications on changes.",
+  "permissions": [
+    "storage",
+    "alarms",
+    "notifications",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://akademik.its.ac.id/*",
+    "https://api.telegram.org/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://akademik.its.ac.id/data_nilaimhs.php*"],
+      "js": [
+        "content/parser.js",
+        "content/extractor.js",
+        "content/monitor.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

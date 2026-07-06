@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ITS Grade Monitor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="card">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo-area">
+        <span class="logo-emoji">🎓</span>
+        <div class="logo-text">
+          <h1>ITS Grade Monitor</h1>
+          <span class="version">v2.0.0</span>
+        </div>
+      </div>
+      <!-- Right Side Header (Status + Settings) -->
+      <div class="header-right">
+        <div id="status-badge" class="status-badge stopped">
+          <span class="pulse-dot"></span>
+          <span id="status-text">Stopped</span>
+        </div>
+        <button id="btn-settings" class="btn-settings-icon" title="Open Settings">
+          <svg viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Dashboard Grid -->
+    <main class="dashboard">
+      <div class="dual-metrics">
+        <div class="metric-card half">
+          <span class="metric-label">Last Auto Check</span>
+          <span id="last-check-auto" class="metric-value">Never</span>
+        </div>
+        <div class="metric-card half">
+          <span class="metric-label">Last Manual Check</span>
+          <span id="last-check-manual" class="metric-value">Never</span>
+        </div>
+      </div>
+
+      <div class="dual-metrics">
+        <div class="metric-card half">
+          <span class="metric-label">Last Notification</span>
+          <span id="last-notification" class="metric-value">Never</span>
+        </div>
+        <div class="metric-card half">
+          <span class="metric-label">Next Check</span>
+          <span id="next-check" class="metric-value">Stopped</span>
+        </div>
+      </div>
+
+      <div class="dual-metrics">
+        <div class="metric-card half">
+          <span class="metric-label">Rows Parsed</span>
+          <span id="rows-parsed" class="metric-value">0</span>
+        </div>
+        <div class="metric-card half">
+          <span class="metric-label">Interval</span>
+          <span id="interval" class="metric-value">15m</span>
+        </div>
+      </div>
+    </main>
+
+    <!-- Actions Section -->
+    <footer class="actions">
+      <!-- Status Toggle Actions -->
+      <div class="toggle-group">
+        <button id="btn-start" class="btn btn-success">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          START
+        </button>
+        <button id="btn-stop" class="btn btn-danger" disabled>
+          <svg class="icon" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+          STOP
+        </button>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="button-grid">
+        <button id="btn-check-now" class="btn btn-primary">
+          <svg class="icon spinner-icon" viewBox="0 0 24 24"><path d="M17.65 6.35A7.958 7.958 0 0 0 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
+          CHECK NOW
+        </button>
+        <button id="btn-open-tab" class="btn btn-secondary">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+          OPEN TAB
+        </button>
+      </div>
+    </footer>
+  </div>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
